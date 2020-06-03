@@ -1,21 +1,20 @@
 //
-//  ContentView.swift
+//  ViewController.swift
 //  tinybooth
 //
 //  Created by Camrynn Dilley on 6/2/20.
 //  Copyright © 2020 codesquad. All rights reserved.
 //
 
-import SwiftUI
+import UIKit
 
-struct ContentView: View {
-    var body: some View {
-        Text("this  is where the camera  will go")
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
+
+
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
