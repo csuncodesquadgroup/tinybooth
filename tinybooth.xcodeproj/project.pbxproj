@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663BCFFF2489A5850090A64E /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663BCFFE2489A5850090A64E /* PreviewViewController.swift */; };
 		66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3C2487430B00D55C70 /* AppDelegate.swift */; };
 		66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3E2487430B00D55C70 /* SceneDelegate.swift */; };
 		66E72E412487430B00D55C70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E402487430B00D55C70 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		663BCFFE2489A5850090A64E /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		66E72E392487430B00D55C70 /* tinybooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinybooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E72E3C2487430B00D55C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E72E3E2487430B00D55C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				66E72E3E2487430B00D55C70 /* SceneDelegate.swift */,
 				66E72E402487430B00D55C70 /* ViewController.swift */,
 				66E72E422487430B00D55C70 /* Main.storyboard */,
+				663BCFFE2489A5850090A64E /* PreviewViewController.swift */,
 				66E72E482487430C00D55C70 /* Assets.xcassets */,
 				66E72E4A2487430C00D55C70 /* LaunchScreen.storyboard */,
 				66E72E4D2487430C00D55C70 /* Info.plist */,
@@ -144,6 +147,7 @@
 				66E72E412487430B00D55C70 /* ViewController.swift in Sources */,
 				66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */,
 				66E72E472487430B00D55C70 /* tinybooth.xcdatamodeld in Sources */,
+				663BCFFF2489A5850090A64E /* PreviewViewController.swift in Sources */,
 				66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
