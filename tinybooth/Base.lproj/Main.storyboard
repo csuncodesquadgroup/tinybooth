@@ -64,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To9-lq-kLb">
-                                        <rect key="frame" x="344" y="15" width="34" height="30"/>
+                                        <rect key="frame" x="339" y="15" width="34" height="30"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
@@ -75,12 +75,12 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="n2p-3m-agV" secondAttribute="bottom" constant="15" id="4AT-Zj-KyG"/>
-                                    <constraint firstItem="To9-lq-kLb" firstAttribute="top" secondItem="vVo-of-wm8" secondAttribute="top" constant="15" id="IgW-VE-1QF"/>
-                                    <constraint firstAttribute="bottom" secondItem="To9-lq-kLb" secondAttribute="bottom" constant="15" id="JrF-1e-kKK"/>
-                                    <constraint firstAttribute="trailing" secondItem="To9-lq-kLb" secondAttribute="trailing" constant="36" id="T7C-Ts-ZTB"/>
-                                    <constraint firstItem="n2p-3m-agV" firstAttribute="leading" secondItem="vVo-of-wm8" secondAttribute="leading" constant="41" id="ZBC-sq-xE4"/>
-                                    <constraint firstItem="n2p-3m-agV" firstAttribute="top" secondItem="vVo-of-wm8" secondAttribute="top" constant="15" id="rCV-MD-fhc"/>
+                                    <constraint firstAttribute="bottom" secondItem="To9-lq-kLb" secondAttribute="bottom" constant="15" id="3Jt-qN-vaW"/>
+                                    <constraint firstAttribute="trailing" secondItem="To9-lq-kLb" secondAttribute="trailing" constant="41" id="JQk-sG-QBB"/>
+                                    <constraint firstItem="n2p-3m-agV" firstAttribute="leading" secondItem="vVo-of-wm8" secondAttribute="leading" constant="41" id="WDq-nk-VnP"/>
+                                    <constraint firstItem="n2p-3m-agV" firstAttribute="top" secondItem="vVo-of-wm8" secondAttribute="top" constant="15" id="ef1-IQ-AwA"/>
+                                    <constraint firstAttribute="bottom" secondItem="n2p-3m-agV" secondAttribute="bottom" constant="15" id="ryt-Nv-pEC"/>
+                                    <constraint firstItem="To9-lq-kLb" firstAttribute="top" secondItem="vVo-of-wm8" secondAttribute="top" constant="15" id="wad-BJ-goJ"/>
                                 </constraints>
                             </view>
                         </subviews>
