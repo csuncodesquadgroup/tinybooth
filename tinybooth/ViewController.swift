@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
+    
+    var captureSession = AVCaptureSession()
+    var backCamera: AVCaptureDevice?;           //  represents back camera
+    var frontCamera: AVCaptureDevice?;          // represents front camera
+    var currentCamera: AVCaptureDevice?;        // represents current camera - should be set to front camera for photobooth
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,10 +32,29 @@ class ViewController: UIViewController {
     // setting up capture session
     func setupCaptureSession() {
         
+        // we  use  the session preset property on caprute session to specificy image  quality and resolution we want
+        captureSession.sessionPreset  =  AVCaptureSession.Preset.photo // we use this to get a  full resolution photo
+        
     }
     
     // configuring necesary capture devices (camera)
     func setupDevice() {
+        
+        //we  create this to represent the iOS decive's  camerea
+        let deviceDiscoverySession =  AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
+        let  devices = deviceDiscoverySession.devices
+        
+        // figuring out if the camera is currently set to front or back facing camera
+        for device in devices {
+            if device.position == AVCaptureDevice.Position.back {
+                backCamera = device;
+            } else if device.position == AVCaptureDevice.Position.front {
+                frontCamera = device;
+            }
+        }
+        
+        // setting the camera view to the front facing camera
+        currentCamera = frontCamera;
         
     }
     
