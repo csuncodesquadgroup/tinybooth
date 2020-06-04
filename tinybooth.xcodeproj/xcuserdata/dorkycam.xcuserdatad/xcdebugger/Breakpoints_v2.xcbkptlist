@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "73BFDA6F-CE92-4E57-8277-05AAF0188DD2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EDFFE7B-99C8-4DEA-921C-1254565B9B7B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tinybooth/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "setupInputOutput()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7EDFFE7B-99C8-4DEA-921C-1254565B9B7B - ac83f86ede77dff9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tinybooth.ViewController.setupInputOutput() -&gt; ()"
+                  moduleName = "tinybooth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dorkycam/Desktop/projects/tinybooth/tinybooth/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "503">
+               </Location>
+               <Location
+                  uuid = "7EDFFE7B-99C8-4DEA-921C-1254565B9B7B - ac83f86ede77dff9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tinybooth.ViewController.setupInputOutput() -&gt; ()"
+                  moduleName = "tinybooth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dorkycam/Desktop/projects/tinybooth/tinybooth/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "557">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
