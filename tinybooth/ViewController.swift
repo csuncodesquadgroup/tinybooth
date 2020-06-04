@@ -62,17 +62,17 @@ class ViewController: UIViewController {
     // creating input using capture devices
     func setupInputOutput() {
         // take  capeture devices and connect to cpature session
-        do {
-            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!); // capturting data from device to add to capture session
-            captureSession.addInput(captureDeviceInput);
-            photoOutput = AVCapturePhotoOutput();
-            
+//        do {
+//            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!); // capturting data from device to add to capture session
+//            captureSession.addInput(captureDeviceInput);
+//            photoOutput = AVCapturePhotoOutput();
+//
 //            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil);
 //            captureSession.addOutput(photoOutput!);
-            
-        } catch {
-            print(error);
-        }
+//
+//        } catch {
+//            print(error);
+//        }
         
     }
     
