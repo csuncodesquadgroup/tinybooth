@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var currentCamera: AVCaptureDevice?         // represents current camera - should be set to front camera for photobooth
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+
+    var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +69,10 @@ class ViewController: UIViewController {
 
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!); // capturting data from device to add to capture session
             captureSession.addInput(captureDeviceInput);
-            // photoOutput = AVCapturePhotoOutput();
+            photoOutput = AVCapturePhotoOutput();
 
             photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil);
-            // captureSession.addOutput(photoOutput!);
+            captureSession.addOutput(photoOutput!);
 
         } catch {
             print(error);
@@ -79,6 +81,7 @@ class ViewController: UIViewController {
     }
     
     // configuring photo output object to process captured images
+    // this is the camera  preview that shows on the screen
     func setupPreviewLayer() {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -96,9 +99,42 @@ class ViewController: UIViewController {
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
         
+        // capturing still image
+        let settings = AVCapturePhotoSettings();
+        photoOutput?.capturePhoto(with: settings, delegate: self);
+        
+        print("camera button pressed");
+        
         // this opens up the PreviewVieweController when the camera/shutter button is tapped
-        performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+        // performSegue(withIdentifier: "showPhotoSegue", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotoSegue" {
+            let previewVC = segue.destination as! PreviewViewController
+            previewVC.image = self.image
+            
+            print("image in prepare function is ");
+            print(image);
+        }
+    }
+    
+}
+
+extension ViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let imageData = photo.fileDataRepresentation() {
+            print(imageData);
+            image = UIImage(data: imageData);
+            
+            print("image in ViewController is ");
+            print(image);
+            print(imageData);
+            
+            performSegue(withIdentifier: "showPhotoSegue", sender: nil);
+            
+
+        }
+    }
 }
 
