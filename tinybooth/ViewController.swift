@@ -25,6 +25,7 @@ class ViewController: UIViewController, PreviewDelegate {
     
     var sound: AVAudioPlayer?                   // timer sound
     var takingPhotos = false;                   // for button display
+    var photoStripImage:  UIImage?
     
     
     @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
@@ -187,6 +188,22 @@ class ViewController: UIViewController, PreviewDelegate {
     public func previewPrinted() {
         print("previewPrinted")
         
+        let printInfo = UIPrintInfo(dictionary:nil)
+        printInfo.outputType = UIPrintInfo.OutputType.photo
+        
+        
+        // Set up print controller
+        
+        let printController = UIPrintInteractionController.shared
+        printController.printInfo = printInfo
+        printController.showsNumberOfCopies = false
+        
+        // Assign a UIImage version of my UIView as a printing iten;
+        printController.printingItem = photoStripImage
+        
+        // Do it
+        printController.present(from: self.view.frame, in: self.view, animated: true, completionHandler: nil);
+        
         startButton.setTitle("Start", for:UIControl.State.normal);
         startButton.isHidden = false;
     }
@@ -196,7 +213,7 @@ class ViewController: UIViewController, PreviewDelegate {
         if segue.identifier == "showPhotoSegue" {
             let previewVC = segue.destination as! PreviewViewController;
 
-            let photoStripImage = PhotoUtil.renderPhotostrip(
+                photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
                 photosCropRect: CGRect(x: 0, y: 450, width: 2300, height: 1700))
             
