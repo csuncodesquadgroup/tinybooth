@@ -44,8 +44,8 @@ class ViewController: UIViewController {
 
         super.viewDidLoad();
         
-        // let path = Bundle.main.path(forResource: "countdownSound_1.mp3", ofType:nil)!
-        // let url = URL(fileURLWithPath: path);
+//         let path = Bundle.main.path(forResource: "/tinybooth/countdownSound_1.mp3", ofType:nil)!
+ //        let url = URL(fileURLWithPath: path);
         do {
 //            sound = try AVAudioPlayer(contentsOf: url);
 //            sound?.numberOfLoops = 1;
