@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var frontCamera: AVCaptureDevice?           // represents front camera
     var currentCamera: AVCaptureDevice?         // represents current camera - should be set to front camera for photobooth
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
     // setting up capture session
     func setupCaptureSession() {
         
-        // we  use  the session preset property on caprute session to specificy image  quality and resolution we want
+        // we  use  the session preset property on capture session to specificy image  quality and resolution we want
         captureSession.sessionPreset  =  AVCaptureSession.Preset.photo // we use this to get a  full resolution photo
         
     }
@@ -62,35 +63,34 @@ class ViewController: UIViewController {
     // creating input using capture devices
     func setupInputOutput() {
         
-        
-        // OMGGGGG There is a variable here somehwere  that is set to nil and it's breaking everythingggggggggggggggggggggggggg
-        // Uncomment everything in the do/catch and build to repo the issue
-        // the app builds but stays stuck on the splash screen and you get a SIGABRT error....
-        
-        // take  capeture devices and connect to cpature session
-//        do {
-//
-//            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!); // capturting data from device to add to capture session
-//            captureSession.addInput(captureDeviceInput);
-//            // photoOutput = AVCapturePhotoOutput();
-//
-//            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil);
-//            // captureSession.addOutput(photoOutput!);
-//
-//        } catch {
-//            print(error);
-//        }
+        do {
+
+            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!); // capturting data from device to add to capture session
+            captureSession.addInput(captureDeviceInput);
+            // photoOutput = AVCapturePhotoOutput();
+
+            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil);
+            // captureSession.addOutput(photoOutput!);
+
+        } catch {
+            print(error);
+        }
         
     }
     
     // configuring photo output object to process captured images
     func setupPrevieLayer() {
-        
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        cameraPreviewLayer?.frame = self.view.frame
+        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+    
     }
     
     // start running when we have finished configuration
     func startRunningCaptureSession() {
-        
+        captureSession.startRunning()
     }
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
