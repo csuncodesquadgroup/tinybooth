@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		663BCFFF2489A5850090A64E /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663BCFFE2489A5850090A64E /* PreviewViewController.swift */; };
+		663BD002248AC1A00090A64E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E402487430B00D55C70 /* ViewController.swift */; };
+		663BD008248AD9050090A64E /* PhotoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663BD007248AD9050090A64E /* PhotoUtil.swift */; };
 		66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3C2487430B00D55C70 /* AppDelegate.swift */; };
 		66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3E2487430B00D55C70 /* SceneDelegate.swift */; };
-		66E72E412487430B00D55C70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E402487430B00D55C70 /* ViewController.swift */; };
 		66E72E442487430B00D55C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E72E422487430B00D55C70 /* Main.storyboard */; };
 		66E72E472487430B00D55C70 /* tinybooth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E452487430B00D55C70 /* tinybooth.xcdatamodeld */; };
 		66E72E492487430C00D55C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66E72E482487430C00D55C70 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		663BCFFE2489A5850090A64E /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		663BD007248AD9050090A64E /* PhotoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUtil.swift; sourceTree = "<group>"; };
 		66E72E392487430B00D55C70 /* tinybooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinybooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E72E3C2487430B00D55C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E72E3E2487430B00D55C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				66E72E4A2487430C00D55C70 /* LaunchScreen.storyboard */,
 				66E72E4D2487430C00D55C70 /* Info.plist */,
 				66E72E452487430B00D55C70 /* tinybooth.xcdatamodeld */,
+				663BD007248AD9050090A64E /* PhotoUtil.swift */,
 			);
 			path = tinybooth;
 			sourceTree = "<group>";
@@ -144,8 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66E72E412487430B00D55C70 /* ViewController.swift in Sources */,
+				663BD002248AC1A00090A64E /* ViewController.swift in Sources */,
 				66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */,
+				663BD008248AD9050090A64E /* PhotoUtil.swift in Sources */,
 				66E72E472487430B00D55C70 /* tinybooth.xcdatamodeld in Sources */,
 				663BCFFF2489A5850090A64E /* PreviewViewController.swift in Sources */,
 				66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */,

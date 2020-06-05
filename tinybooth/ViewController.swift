@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+
 class ViewController: UIViewController {
 
     
@@ -20,6 +21,15 @@ class ViewController: UIViewController {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
     var image: UIImage?
+    var fileNames: [String] = [];
+    
+    var sound: AVAudioPlayer?                   // timer sound
+    var takingPhotos = false;                   // for button display
+    
+    
+    @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
+    var timer = Timer()                         // timer variable for timer
+    var seconds = 3                             // countdown time for timer
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +41,28 @@ class ViewController: UIViewController {
         setupInputOutput()
         setupPreviewLayer()
         startRunningCaptureSession()
+
+        super.viewDidLoad();
+        
+        // let path = Bundle.main.path(forResource: "countdownSound_1.mp3", ofType:nil)!
+        // let url = URL(fileURLWithPath: path);
+        do {
+//            sound = try AVAudioPlayer(contentsOf: url);
+//            sound?.numberOfLoops = 1;
+//            sound?.play()
+//            sound?.stop()
+        } catch {
+            // couldn't load file :(
+        }
+        
+        
+        startButton.layer.zPosition = 100;
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        startButton.setTitle("Start", for:UIControl.State.normal);
     }
     
     // setting up capture session
@@ -96,27 +128,74 @@ class ViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
-    @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
-        
-        // capturing still image
-        let settings = AVCapturePhotoSettings();
-        photoOutput?.capturePhoto(with: settings, delegate: self);
-        
-        print("camera button pressed");
-        
-        // this opens up the PreviewVieweController when the camera/shutter button is tapped
-        // performSegue(withIdentifier: "showPhotoSegue", sender: nil)
+    @IBAction func afterPhoto(segue: UIStoryboardSegue) {
+        startButton.setTitle("Start", for:UIControl.State.normal);
+        startButton.isHidden = false;
     }
     
+    // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
+    @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
+        if (takingPhotos) {
+            return;
+        }
+        
+        startButton.backgroundColor = UIColor.red
+        
+        takingPhotos = true;
+        var count = 4;
+        var photosTaken = 0;
+        fileNames = [];
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (t) in
+            
+            if let s = self {
+                count = count - 1;
+                if (count < 1) {
+                    s.takePhoto();
+                    count = 4;
+                    photosTaken = photosTaken + 1;
+                    if (photosTaken == 4) {
+                        t.invalidate();
+                        s.startButton.isHidden = true;
+                        self?.takingPhotos = false;
+                        self?.startButton.backgroundColor = UIColor.green
+                    }
+                    
+                } else {
+                    self?.sound?.play();
+                    s.startButton.setTitle(String(count), for:UIControl.State.normal);
+                }
+            }
+        });
+    }
+        
+    func takePhoto() {
+        
+        //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
+        let settings = AVCapturePhotoSettings();
+        photoOutput?.capturePhoto(with: settings, delegate: self);
+        //performSegue(withIdentifier: "showPhoto_Segue", sender: nil);
+        //print("tap")
+    }
+    
+    func launchPreview() {
+        performSegue(withIdentifier: "showPhotoSegue", sender: nil);
+    }
+        
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
-            let previewVC = segue.destination as! PreviewViewController
-            previewVC.image = self.image
+            let previewVC = segue.destination as! PreviewViewController;
+
+            let photoStripImage = PhotoUtil.renderPhotostrip(
+                photoFiles: fileNames.reversed(),
+                photosCropRect: CGRect(x: 0, y: 450, width: 2300, height: 1700))
             
-            print("image in prepare function is ");
-            print(image);
+            previewVC.image = photoStripImage;
         }
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true;
     }
     
 }
@@ -124,17 +203,15 @@ class ViewController: UIViewController {
 extension ViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
-            print(imageData);
             image = UIImage(data: imageData);
-            
-            print("image in ViewController is ");
-            print(image);
-            print(imageData);
-            
-            performSegue(withIdentifier: "showPhotoSegue", sender: nil);
-            
-
+            let filename = PhotoUtil.savePhotoToDisk(image!, name: "photo \(fileNames.count)")
+            fileNames.append(filename)
+            if (fileNames.count >= 4) {
+                launchPreview();
+            }
         }
     }
 }
+
+
 
