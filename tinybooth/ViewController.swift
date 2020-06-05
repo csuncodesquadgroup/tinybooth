@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         setupCaptureSession()
         setupDevice()
         setupInputOutput()
-        setupPrevieLayer()
+        setupPreviewLayer()
         startRunningCaptureSession()
     }
     
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     }
     
     // configuring photo output object to process captured images
-    func setupPrevieLayer() {
+    func setupPreviewLayer() {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
