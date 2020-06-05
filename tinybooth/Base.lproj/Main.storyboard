@@ -60,7 +60,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelButton_TouchUpInside:" destination="RrH-3g-mvS" eventType="touchUpInside" id="JfO-Ah-nLo"/>
+                                            <action selector="redoButton_TouchUpInside:" destination="RrH-3g-mvS" eventType="touchUpInside" id="jzu-Pl-cJb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To9-lq-kLb">

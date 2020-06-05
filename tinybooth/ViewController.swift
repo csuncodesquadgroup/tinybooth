@@ -62,13 +62,14 @@ class ViewController: UIViewController {
     // creating input using capture devices
     func setupInputOutput() {
         
+        
         // OMGGGGG There is a variable here somehwere  that is set to nil and it's breaking everythingggggggggggggggggggggggggg
         // Uncomment everything in the do/catch and build to repo the issue
         // the app builds but stays stuck on the splash screen and you get a SIGABRT error....
         
         // take  capeture devices and connect to cpature session
 //        do {
-//            
+//
 //            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!); // capturting data from device to add to capture session
 //            captureSession.addInput(captureDeviceInput);
 //            // photoOutput = AVCapturePhotoOutput();
