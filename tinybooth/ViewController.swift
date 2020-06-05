@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PreviewDelegate {
 
     
     var captureSession = AVCaptureSession()
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     var sound: AVAudioPlayer?                   // timer sound
     var takingPhotos = false;                   // for button display
+    var photoStripImage:  UIImage?
     
     
     @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
@@ -44,13 +45,13 @@ class ViewController: UIViewController {
 
         super.viewDidLoad();
         
-        // let path = Bundle.main.path(forResource: "countdownSound_1.mp3", ofType:nil)!
-        // let url = URL(fileURLWithPath: path);
+         let path = Bundle.main.path(forResource: "countdownSound_1.mp3", ofType:nil)!
+         let url = URL(fileURLWithPath: path);
         do {
-//            sound = try AVAudioPlayer(contentsOf: url);
-//            sound?.numberOfLoops = 1;
-//            sound?.play()
-//            sound?.stop()
+            sound = try AVAudioPlayer(contentsOf: url);
+            sound?.numberOfLoops = 1;
+            sound?.play()
+            sound?.stop()
         } catch {
             // couldn't load file :(
         }
@@ -128,10 +129,6 @@ class ViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    @IBAction func afterPhoto(segue: UIStoryboardSegue) {
-        startButton.setTitle("Start", for:UIControl.State.normal);
-        startButton.isHidden = false;
-    }
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
@@ -180,17 +177,50 @@ class ViewController: UIViewController {
     func launchPreview() {
         performSegue(withIdentifier: "showPhotoSegue", sender: nil);
     }
+    
+    public func previewDismissed() {
+        startButton.setTitle("Start", for:UIControl.State.normal);
+        startButton.isHidden = false;
+        print("showing button again")
+        print(startButton.isHidden)
+    }
+    
+    public func previewPrinted() {
+        print("previewPrinted")
+        
+        let printInfo = UIPrintInfo(dictionary:nil)
+        printInfo.outputType = UIPrintInfo.OutputType.photo
+        
+        
+        // Set up print controller
+        
+        let printController = UIPrintInteractionController.shared
+        printController.printInfo = printInfo
+        printController.showsNumberOfCopies = false
+        
+        // Assign a UIImage version of my UIView as a printing iten;
+        printController.printingItem = photoStripImage
+        
+        // Do it
+        printController.present(from: self.view.frame, in: self.view, animated: true, completionHandler: nil);
+        
+        startButton.setTitle("Start", for:UIControl.State.normal);
+        startButton.isHidden = false;
+    }
         
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
             let previewVC = segue.destination as! PreviewViewController;
 
-            let photoStripImage = PhotoUtil.renderPhotostrip(
+                photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
                 photosCropRect: CGRect(x: 0, y: 450, width: 2300, height: 1700))
             
             previewVC.image = photoStripImage;
+            
+            previewVC.delegate = self
+            
         }
     }
 
