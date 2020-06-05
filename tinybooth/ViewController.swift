@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PreviewDelegate {
 
     
     var captureSession = AVCaptureSession()
@@ -44,13 +44,13 @@ class ViewController: UIViewController {
 
         super.viewDidLoad();
         
-//         let path = Bundle.main.path(forResource: "/tinybooth/countdownSound_1.mp3", ofType:nil)!
- //        let url = URL(fileURLWithPath: path);
+         let path = Bundle.main.path(forResource: "countdownSound_1.mp3", ofType:nil)!
+         let url = URL(fileURLWithPath: path);
         do {
-//            sound = try AVAudioPlayer(contentsOf: url);
-//            sound?.numberOfLoops = 1;
-//            sound?.play()
-//            sound?.stop()
+            sound = try AVAudioPlayer(contentsOf: url);
+            sound?.numberOfLoops = 1;
+            sound?.play()
+            sound?.stop()
         } catch {
             // couldn't load file :(
         }
@@ -128,10 +128,6 @@ class ViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    @IBAction func afterPhoto(segue: UIStoryboardSegue) {
-        startButton.setTitle("Start", for:UIControl.State.normal);
-        startButton.isHidden = false;
-    }
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
@@ -180,6 +176,20 @@ class ViewController: UIViewController {
     func launchPreview() {
         performSegue(withIdentifier: "showPhotoSegue", sender: nil);
     }
+    
+    public func previewDismissed() {
+        startButton.setTitle("Start", for:UIControl.State.normal);
+        startButton.isHidden = false;
+        print("showing button again")
+        print(startButton.isHidden)
+    }
+    
+    public func previewPrinted() {
+        print("previewPrinted")
+        
+        startButton.setTitle("Start", for:UIControl.State.normal);
+        startButton.isHidden = false;
+    }
         
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -191,6 +201,9 @@ class ViewController: UIViewController {
                 photosCropRect: CGRect(x: 0, y: 450, width: 2300, height: 1700))
             
             previewVC.image = photoStripImage;
+            
+            previewVC.delegate = self
+            
         }
     }
 

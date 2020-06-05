@@ -3,4 +3,54 @@
    uuid = "73BFDA6F-CE92-4E57-8277-05AAF0188DD2"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83B82466-609C-453B-A828-2E15CE92F249"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tinybooth/PreviewViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "redoButton_TouchUpInside(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "83B82466-609C-453B-A828-2E15CE92F249 - 4424de230dd42c83"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tinybooth.PreviewViewController.redoButton_TouchUpInside(Any) -&gt; ()"
+                  moduleName = "tinybooth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dorkycam/Desktop/projects/tinybooth/tinybooth/PreviewViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "83B82466-609C-453B-A828-2E15CE92F249 - 8eef5eb2cd6970e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in tinybooth.PreviewViewController.redoButton_TouchUpInside(Any) -&gt; ()"
+                  moduleName = "tinybooth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dorkycam/Desktop/projects/tinybooth/tinybooth/PreviewViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

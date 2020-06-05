@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol PreviewDelegate {
+    func previewDismissed()
+    func previewPrinted()
+}
+
 class PreviewViewController: UIViewController {
+    
+    var delegate: PreviewDelegate?
     
     @IBOutlet weak var photo: UIImageView!  // linked to the UIImageView on previeew screen
     var image: UIImage!                     //  is the image variable for what goes inside the UIImageView
@@ -26,23 +33,20 @@ class PreviewViewController: UIViewController {
     @IBAction func redoButton_TouchUpInside(_ sender: Any) {
         
         // dismisses preview modal
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            self.delegate?.previewDismissed()
+        })
         
     }
 
     // Linked to the "Print" button on Preview screen of Main.storyboard
     @IBAction func printButton_TouchUpInside(_ sender: Any) {
+        delegate?.previewPrinted()
+        
+        // dismisses preview modal
+        dismiss(animated: true, completion: {
+            self.delegate?.previewDismissed()
+        })
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
