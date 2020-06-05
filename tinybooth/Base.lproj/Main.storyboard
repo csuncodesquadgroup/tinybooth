@@ -50,6 +50,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vxV-oz-prr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVo-of-wm8">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -64,8 +65,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To9-lq-kLb">
-                                        <rect key="frame" x="339" y="15" width="34" height="30"/>
-                                        <state key="normal" title="Save">
+                                        <rect key="frame" x="341" y="15" width="32" height="30"/>
+                                        <state key="normal" title="Print">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
@@ -96,6 +97,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vP0-v6-dwJ"/>
                     </view>
+                    <connections>
+                        <outlet property="photo" destination="vxV-oz-prr" id="I0J-6V-Vkf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfo-FE-iq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

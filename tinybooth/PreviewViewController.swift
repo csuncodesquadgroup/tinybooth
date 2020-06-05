@@ -9,10 +9,15 @@
 import UIKit
 
 class PreviewViewController: UIViewController {
-
+    
+    @IBOutlet weak var photo: UIImageView!  // linked to the UIImageView on previeew screen
+    var image: UIImage!                     //  is the image variable for what goes inside the UIImageView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        photo.image =  self.image;
+        print("image in PreviewViewController is ");
+        print(image);
         // Do any additional setup after loading the view.
     }
     
