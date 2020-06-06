@@ -11,7 +11,6 @@ import AVFoundation
 
 
 class ViewController: UIViewController, PreviewDelegate {
-
     
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?            //  represents back camera
@@ -221,7 +220,12 @@ class ViewController: UIViewController, PreviewDelegate {
             
             previewVC.delegate = self
             
+            // prevents user from dismissing by sliding down modal
+            previewVC.isModalInPresentation = true
+            
         }
+        
+        
     }
 
     override var prefersStatusBarHidden: Bool {
