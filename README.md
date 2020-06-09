@@ -10,7 +10,7 @@ Getting started
   into your terminal.
 
 Opening up the project
-1. In. your new `tinybooth` folder find the `tinybooth.xcodeproj` file
+1. In your new `tinybooth` folder find the `tinybooth.xcodeproj` file
 2. Open up that file
 3. If you see red errors in the side panel continue to the next step, otherwise skip to step 8
 4. Click on the folder icon of the left hand panel of XCode
