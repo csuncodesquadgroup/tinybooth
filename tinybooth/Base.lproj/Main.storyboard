@@ -45,6 +45,22 @@
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-l7-o9g">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ub-9L-d2S" userLabel="Flash Button">
+                                        <rect key="frame" x="339" y="42" width="17" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="bolt.slash.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" image="bolt.fill" catalog="system"/>
+                                        <state key="highlighted" image="bolt.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="flashButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWH-5N-aIo"/>
+                                            <action selector="flashToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfr-fo-SPb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -62,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="flashButton" destination="5ub-9L-d2S" id="azg-bg-gXe"/>
                         <outlet property="startButton" destination="ImI-33-kwU" id="6rI-cY-A8H"/>
                         <segue destination="RrH-3g-mvS" kind="presentation" identifier="showPhotoSegue" id="3N7-bz-Rkl"/>
                     </connections>
@@ -149,6 +166,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bolt.fill" catalog="system" width="101" height="128"/>
+        <image name="bolt.slash.fill" catalog="system" width="101" height="128"/>
         <image name="printer.fill" catalog="system" width="128" height="111"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
     </resources>
