@@ -185,6 +185,8 @@ class ViewController: UIViewController, PreviewDelegate {
         
         photoOutput?.capturePhoto(with: settings, delegate: self);
         
+        let s = self
+        s.startButton.setTitle(String("Smile!"), for:UIControl.State.normal);
         
         
         //performSegue(withIdentifier: "showPhoto_Segue", sender: nil);
