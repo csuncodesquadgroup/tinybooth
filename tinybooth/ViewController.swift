@@ -60,6 +60,10 @@ class ViewController: UIViewController, PreviewDelegate {
         
         
         startButton.layer.zPosition = 100;
+        startButton.layer.cornerRadius = self.view.frame.width * 0.11 ;
+        let fontSize = self.view.frame.width * 0.05 ;
+        startButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        startButton.clipsToBounds = true;
         
     }
     
@@ -164,6 +168,7 @@ class ViewController: UIViewController, PreviewDelegate {
                     
                 } else {
                     self?.sound?.play();
+                    s.startButton.backgroundColor = UIColor.red
                     s.startButton.setTitle(String(count), for:UIControl.State.normal);
                 }
             }
@@ -186,6 +191,7 @@ class ViewController: UIViewController, PreviewDelegate {
         photoOutput?.capturePhoto(with: settings, delegate: self);
         
         let s = self
+        startButton.backgroundColor = UIColor.black
         s.startButton.setTitle(String("Smile!"), for:UIControl.State.normal);
         
         
