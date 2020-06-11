@@ -62,7 +62,7 @@ class ViewController: UIViewController, PreviewDelegate {
         
         
         startButton.layer.zPosition = 100;
-        startButton.layer.cornerRadius = self.view.frame.height * 0.05 ;
+        startButton.layer.cornerRadius = self.view.frame.height * 0.055 ;
         let fontSize = self.view.frame.width * 0.05 ;
         startButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         startButton.clipsToBounds = true;
