@@ -175,7 +175,7 @@ class ViewController: UIViewController, PreviewDelegate {
         //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
         let settings = AVCapturePhotoSettings();
         
-        let flashToggledOn = true;
+        let flashToggledOn = true; // delete this line and add this to the device setup function  if you make this toggle
         if (flashToggledOn) {
             settings.flashMode = AVCaptureDevice.FlashMode.on
         } else {
