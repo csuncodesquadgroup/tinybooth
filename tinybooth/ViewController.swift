@@ -169,6 +169,11 @@ class ViewController: UIViewController, PreviewDelegate {
         //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
         let settings = AVCapturePhotoSettings();
         photoOutput?.capturePhoto(with: settings, delegate: self);
+        
+        // if flash = true
+        // call falash function
+        
+        
         //performSegue(withIdentifier: "showPhoto_Segue", sender: nil);
         //print("tap")
     }

@@ -15,6 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPn-Fc-B6E">
+                                <rect key="frame" x="0.0" y="524" width="414" height="212"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-OT-LEv">
+                                        <rect key="frame" x="0.0" y="141" width="414" height="192"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="kY0-OT-LEv" firstAttribute="top" secondItem="YPn-Fc-B6E" secondAttribute="top" constant="141" id="2vR-70-w7u"/>
+                                    <constraint firstAttribute="bottom" secondItem="kY0-OT-LEv" secondAttribute="bottom" constant="-121" id="P0q-1o-MZ2"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImI-33-kwU">
                                 <rect key="frame" x="162" y="564" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -28,8 +42,19 @@
                                     <action selector="cameraButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tt2-mF-CBn"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-l7-o9g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="YPn-Fc-B6E" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9SF-ZX-Up2"/>
+                            <constraint firstItem="aFj-l7-o9g" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.14538" id="EbJ-WX-OkI"/>
+                            <constraint firstItem="YPn-Fc-B6E" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.288043" id="Iat-py-m5G"/>
+                            <constraint firstItem="kY0-OT-LEv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="R3e-5w-elb"/>
+                            <constraint firstItem="aFj-l7-o9g" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WKW-UZ-pk9"/>
+                            <constraint firstItem="YPn-Fc-B6E" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hyl-b0-KbF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -39,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.80434782608697"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="FYx-ea-nif">
