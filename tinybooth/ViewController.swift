@@ -18,6 +18,9 @@ class ViewController: UIViewController, PreviewDelegate {
     var currentCamera: AVCaptureDevice?         // represents current camera - should be set to front camera for photobooth
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var flashToggledOn:  Bool!
+
+    
 
     var image: UIImage?
     var fileNames: [String] = [];
@@ -88,6 +91,9 @@ class ViewController: UIViewController, PreviewDelegate {
                 frontCamera = device;
             }
         }
+        
+
+
         
         // setting the camera view to the front facing camera
         currentCamera = frontCamera;
@@ -168,10 +174,17 @@ class ViewController: UIViewController, PreviewDelegate {
         
         //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
         let settings = AVCapturePhotoSettings();
+        
+        let flashToggledOn = true;
+        if (flashToggledOn) {
+            settings.flashMode = AVCaptureDevice.FlashMode.on
+        } else {
+            settings.flashMode = AVCaptureDevice.FlashMode.off
+        }
+        //  make  a separate function with flashToggledOn = !flashToggledOn inside and call that when the user presses the flash button
+        
         photoOutput?.capturePhoto(with: settings, delegate: self);
         
-        // if flash = true
-        // call falash function
         
         
         //performSegue(withIdentifier: "showPhoto_Segue", sender: nil);
