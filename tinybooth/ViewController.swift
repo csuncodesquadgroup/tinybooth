@@ -180,12 +180,14 @@ class ViewController: UIViewController, PreviewDelegate {
     @IBAction func flashButton_TouchUpInside(_ sender: Any) {
         flashToggleOn.toggle()
         if (flashToggleOn) {
+            
             flashButton.setImage(UIImage(systemName: "bolt.fill"),
-                                 for: [.highlighted, .selected])
+                                 for: .normal)
         } else {
             flashButton.setImage(UIImage(systemName:"bolt.slash.fill"),
-                                 for: [.highlighted, .selected])
+                                 for: .normal)
         }
+
     }
     
 

@@ -46,9 +46,8 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-l7-o9g">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ub-9L-d2S" userLabel="Flash Button">
-                                        <rect key="frame" x="339" y="42" width="17" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ub-9L-d2S" userLabel="Flash Button">
+                                        <rect key="frame" x="339" y="42.666666666666664" width="17" height="21.999999999999993"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="bolt.slash.fill" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,11 +56,14 @@
                                         <state key="highlighted" image="bolt.fill" catalog="system"/>
                                         <connections>
                                             <action selector="flashButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OWH-5N-aIo"/>
-                                            <action selector="flashToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfr-fo-SPb"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5ub-9L-d2S" secondAttribute="trailing" constant="58" id="kVT-1J-yBY"/>
+                                    <constraint firstItem="5ub-9L-d2S" firstAttribute="centerY" secondItem="aFj-l7-o9g" secondAttribute="centerY" id="tYE-KN-smr"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
