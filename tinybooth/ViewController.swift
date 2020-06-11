@@ -18,9 +18,7 @@ class ViewController: UIViewController, PreviewDelegate {
     var currentCamera: AVCaptureDevice?         // represents current camera - should be set to front camera for photobooth
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    var flashToggledOn:  Bool!
 
-    
 
     var image: UIImage?
     var fileNames: [String] = [];
@@ -33,6 +31,10 @@ class ViewController: UIViewController, PreviewDelegate {
     @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
     var timer = Timer()                         // timer variable for timer
     var seconds = 3                             // countdown time for timer
+    
+
+    @IBOutlet weak var flashButton: UIButton!   //connects flash button
+    var flashToggleOn: Bool = false;            //sets flash default to off
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -174,18 +176,33 @@ class ViewController: UIViewController, PreviewDelegate {
             }
         });
     }
-        
+    
+    @IBAction func flashButton_TouchUpInside(_ sender: Any) {
+        flashToggleOn.toggle()
+        if (flashToggleOn) {
+            
+            flashButton.setImage(UIImage(systemName: "bolt.fill"),
+                                 for: .normal)
+        } else {
+            flashButton.setImage(UIImage(systemName:"bolt.slash.fill"),
+                                 for: .normal)
+        }
+
+    }
+    
+
     func takePhoto() {
         
         //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
         let settings = AVCapturePhotoSettings();
         
-        let flashToggledOn = true; // delete this line and add this to the device setup function  if you make this toggle
-        if (flashToggledOn) {
+        if (flashToggleOn) {
             settings.flashMode = AVCaptureDevice.FlashMode.on
         } else {
             settings.flashMode = AVCaptureDevice.FlashMode.off
         }
+      
+ 
         //  make  a separate function with flashToggledOn = !flashToggledOn inside and call that when the user presses the flash button
         
         photoOutput?.capturePhoto(with: settings, delegate: self);
@@ -199,6 +216,8 @@ class ViewController: UIViewController, PreviewDelegate {
         //print("tap")
     }
     
+
+
     func launchPreview() {
         performSegue(withIdentifier: "showPhotoSegue", sender: nil);
     }
@@ -209,6 +228,7 @@ class ViewController: UIViewController, PreviewDelegate {
         print("showing button again")
         print(startButton.isHidden)
     }
+    
     
     public func previewPrinted() {
         print("previewPrinted")
