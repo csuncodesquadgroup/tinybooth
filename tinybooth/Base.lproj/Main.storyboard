@@ -22,6 +22,13 @@
                                         <rect key="frame" x="0.0" y="141" width="414" height="192"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Awesome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceB-Rg-wRn">
+                                        <rect key="frame" x="59" y="54" width="297" height="104"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
@@ -82,6 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="displayMessage" destination="ceB-Rg-wRn" id="Gwn-X3-7a3"/>
                         <outlet property="flashButton" destination="5ub-9L-d2S" id="azg-bg-gXe"/>
                         <outlet property="startButton" destination="ImI-33-kwU" id="6rI-cY-A8H"/>
                         <segue destination="RrH-3g-mvS" kind="presentation" identifier="showPhotoSegue" id="3N7-bz-Rkl"/>

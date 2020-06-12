@@ -26,6 +26,9 @@ class ViewController: UIViewController, PreviewDelegate {
     var sound: AVAudioPlayer?                   // timer sound
     var takingPhotos = false;                   // for button display
     var photoStripImage:  UIImage?
+    let sillyMessages =  ["Smile!", "Cheese!", "Work it!", "Cute!", "Perfect!", "Pose!", "Adorable!", "That's  Great!", "\u{1F60E}"];
+    
+    @IBOutlet weak var displayMessage: UILabel!
     
     
     @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
@@ -66,6 +69,8 @@ class ViewController: UIViewController, PreviewDelegate {
         let fontSize = self.view.frame.width * 0.05 ;
         startButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         startButton.clipsToBounds = true;
+        displayMessage.font = displayMessage.font.withSize(fontSize)
+        displayMessage.isHidden = true;
         
     }
     
@@ -154,8 +159,10 @@ class ViewController: UIViewController, PreviewDelegate {
         var photosTaken = 0;
         fileNames = [];
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (t) in
-            
+        
             if let s = self {
+                s.startButton.isHidden = false;
+                s.displayMessage.isHidden = true;
                 count = count - 1;
                 if (count < 1) {
                     s.takePhoto();
@@ -164,6 +171,7 @@ class ViewController: UIViewController, PreviewDelegate {
                     if (photosTaken == 4) {
                         t.invalidate();
                         s.startButton.isHidden = true;
+                        s.displayMessage.text = "All done!"
                         self?.takingPhotos = false;
                         self?.startButton.backgroundColor = UIColor.green
                     }
@@ -208,17 +216,19 @@ class ViewController: UIViewController, PreviewDelegate {
         photoOutput?.capturePhoto(with: settings, delegate: self);
         
         let s = self
-        startButton.backgroundColor = UIColor.black
-        s.startButton.setTitle(String("Smile!"), for:UIControl.State.normal);
+        s.startButton.isHidden = true;
+        s.displayMessage.isHidden = false;
+        let message = sillyMessages.randomElement()!
+        displayMessage.backgroundColor = UIColor.black
+        s.displayMessage.text = message;
         
         
         //performSegue(withIdentifier: "showPhoto_Segue", sender: nil);
         //print("tap")
     }
-    
-
 
     func launchPreview() {
+        displayMessage.isHidden = true;
         performSegue(withIdentifier: "showPhotoSegue", sender: nil);
     }
     
