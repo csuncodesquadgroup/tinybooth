@@ -71,13 +71,11 @@ class ViewController: UIViewController, PreviewDelegate {
         displayMessage.font = displayMessage.font.withSize(fontSize)
         displayMessage.isHidden = true;
         
-        
-        // flash button is only compatible with iOS 13, if lower than 13, hide flash button
-        if #available(iOS 13, *) {
-            flashButton.isHidden = false
-        } else {
+        let modelName = UIDevice.modelName
+        if (modelName  ==  "iPad Air 2") {
             flashButton.isHidden = true
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -191,7 +189,7 @@ class ViewController: UIViewController, PreviewDelegate {
         });
     }
     
-    @available(iOS 13, *)
+
     @IBAction func flashButton_TouchUpInside(_ sender: Any) {
         flashToggleOn.toggle()
         if (flashToggleOn) {
@@ -211,13 +209,12 @@ class ViewController: UIViewController, PreviewDelegate {
         //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
         let settings = AVCapturePhotoSettings();
         
-        if #available(iOS 13, *) {
             if (flashToggleOn) {
             settings.flashMode = AVCaptureDevice.FlashMode.on
             } else {
                 settings.flashMode = AVCaptureDevice.FlashMode.off
             }
-        }
+    
  
         //  make  a separate function with flashToggledOn = !flashToggledOn inside and call that when the user presses the flash button
         

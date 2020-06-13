@@ -12,6 +12,7 @@
 		663BD008248AD9050090A64E /* PhotoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663BD007248AD9050090A64E /* PhotoUtil.swift */; };
 		663BD00B248ADFF70090A64E /* countdownSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 663BD009248ADFF70090A64E /* countdownSound.mp3 */; };
 		663BD00C248ADFF70090A64E /* countdownSound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 663BD00A248ADFF70090A64E /* countdownSound_1.mp3 */; };
+		6655F66F2495854A000D6C76 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655F66E2495854A000D6C76 /* UIDevice.swift */; };
 		66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3C2487430B00D55C70 /* AppDelegate.swift */; };
 		66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3E2487430B00D55C70 /* SceneDelegate.swift */; };
 		66E72E442487430B00D55C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E72E422487430B00D55C70 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		663BD007248AD9050090A64E /* PhotoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUtil.swift; sourceTree = "<group>"; };
 		663BD009248ADFF70090A64E /* countdownSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdownSound.mp3; sourceTree = "<group>"; };
 		663BD00A248ADFF70090A64E /* countdownSound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdownSound_1.mp3; sourceTree = "<group>"; };
+		6655F66E2495854A000D6C76 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		66E72E392487430B00D55C70 /* tinybooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinybooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E72E3C2487430B00D55C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E72E3E2487430B00D55C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				66E72E4D2487430C00D55C70 /* Info.plist */,
 				66E72E452487430B00D55C70 /* tinybooth.xcdatamodeld */,
 				663BD007248AD9050090A64E /* PhotoUtil.swift */,
+				6655F66E2495854A000D6C76 /* UIDevice.swift */,
 			);
 			path = tinybooth;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				66E72E472487430B00D55C70 /* tinybooth.xcdatamodeld in Sources */,
 				663BCFFF2489A5850090A64E /* PreviewViewController.swift in Sources */,
 				66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */,
+				6655F66F2495854A000D6C76 /* UIDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +309,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A3CKCK5S93;
+				DEVELOPMENT_TEAM = S4UJ25XGGT;
 				INFOPLIST_FILE = tinybooth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = code.squad.tinyboothh;
+				PRODUCT_BUNDLE_IDENTIFIER = codesquad.tinyboothh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,14 +328,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A3CKCK5S93;
+				DEVELOPMENT_TEAM = S4UJ25XGGT;
 				INFOPLIST_FILE = tinybooth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = code.squad.tinyboothh;
+				PRODUCT_BUNDLE_IDENTIFIER = codesquad.tinyboothh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
