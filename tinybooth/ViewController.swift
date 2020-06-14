@@ -20,6 +20,9 @@ class ViewController: UIViewController, PreviewDelegate {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
 
 
+    @IBOutlet weak var bottomBorder: UILabel!
+    
+    
     var image: UIImage?
     var fileNames: [String] = [];
     
@@ -28,13 +31,13 @@ class ViewController: UIViewController, PreviewDelegate {
     var photoStripImage:  UIImage?
     let sillyMessages =  ["Smile!", "Cheese!", "Work it!", "Cute!", "Perfect!", "Pose!", "Adorable!", "That's  Great!", "\u{1F60E}"];
     
-    @IBOutlet weak var displayMessage: UILabel!
     
-    
+
     @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
     var timer = Timer()                         // timer variable for timer
     var seconds = 3                             // countdown time for timer
-    
+    @IBOutlet weak var displayMessage: UILabel!
+
     @IBOutlet weak var flashButton: UIButton!   //connects flash button
     var flashToggleOn: Bool = false;            //sets flash default to off
     
@@ -75,6 +78,8 @@ class ViewController: UIViewController, PreviewDelegate {
         if (modelName  ==  "iPad Air 2") {
             flashButton.isHidden = true
         }
+        
+        self.bottomBorder.frame.size.height += UIScreen.main.bounds.height*5
         
     }
     

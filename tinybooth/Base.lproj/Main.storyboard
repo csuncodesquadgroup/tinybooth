@@ -90,6 +90,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomBorder" destination="YPn-Fc-B6E" id="fd6-k2-3Mx"/>
                         <outlet property="displayMessage" destination="ceB-Rg-wRn" id="Gwn-X3-7a3"/>
                         <outlet property="flashButton" destination="5ub-9L-d2S" id="azg-bg-gXe"/>
                         <outlet property="startButton" destination="ImI-33-kwU" id="6rI-cY-A8H"/>
