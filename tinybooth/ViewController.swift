@@ -17,7 +17,7 @@ class ViewController: UIViewController, PreviewDelegate {
     var frontCamera: AVCaptureDevice?           // represents front camera
     var currentCamera: AVCaptureDevice?         // represents current camera - should be set to front camera for photobooth
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
-    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
 
 
     var image: UIImage?
@@ -137,10 +137,25 @@ class ViewController: UIViewController, PreviewDelegate {
     // this is the camera  preview that shows on the screen
     func setupPreviewLayer() {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         cameraPreviewLayer?.frame = self.view.frame
         self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+        
+        let aspectRatio = UIScreen.main.bounds.width/UIScreen.main.bounds.height
+        
+        if (aspectRatio == 0.75) {
+            cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
+                                                   y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
+                                                    0.211*UIScreen.main.bounds.height))
+        } else {
+            cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
+                                                   y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
+                                                    0.403*UIScreen.main.bounds.height))
+            
+        }
+
+        
     
     }
     
@@ -272,10 +287,12 @@ class ViewController: UIViewController, PreviewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
             let previewVC = segue.destination as! PreviewViewController;
-
+            
                 photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
-                photosCropRect: CGRect(x: 0, y: 450, width: 2300, height: 1700))
+                photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 1700))
+            
+
             
             previewVC.image = photoStripImage;
             

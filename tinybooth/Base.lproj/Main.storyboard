@@ -73,6 +73,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ImI-33-kwU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="1JX-Db-mXC">
                                 <variation key="heightClass=regular-widthClass=compact" constant="31"/>
