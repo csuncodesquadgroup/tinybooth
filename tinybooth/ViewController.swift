@@ -149,7 +149,7 @@ class ViewController: UIViewController, PreviewDelegate {
         
         let aspectRatio = UIScreen.main.bounds.width/UIScreen.main.bounds.height
         
-        if (aspectRatio == 0.75) {
+        if (aspectRatio >= 0.70) {
             cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
                                                    y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
                                                     0.211*UIScreen.main.bounds.height))
