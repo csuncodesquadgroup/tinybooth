@@ -17,5 +17,5 @@ Opening up the project
 5. Click on the `tinybooth.xcodeproj` file at the top of the panel
 6. There should be some information to t he right of that panel now, and you should see some red circles next to the `Team` and `Bundle Indentifier` sections
 7. Click on the `Team` dropdown and select your team - this should fix those errors
-8. Make suer you have a capable iOS device plugged in (iOS 13 or later) and that it's selected as the device to build on
+8. Make sure you have a capable iOS device plugged in (iOS 13 or later) and that it's selected as the device to build on
 9. Press the "play" button on the upper left hand side of XCode to build the app
