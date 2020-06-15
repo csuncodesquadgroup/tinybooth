@@ -49,5 +49,9 @@ class PreviewViewController: UIViewController {
         })
     }
 
-
+    @IBAction func shareButton_TouchUpInside(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
+    }
+    
 }
