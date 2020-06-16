@@ -56,9 +56,9 @@ class PreviewViewController: UIViewController {
     // Linked to the "Share" button on Preview screen of Main.storyboard
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
-        
         if let popOver = activityController.popoverPresentationController {
             popOver.permittedArrowDirections = .up
+            popOver.sourceRect = CGRect(x: shareButton.frame.origin.x, y: shareButton.frame.origin.y, width: shareButton.frame.width, height: shareButton.frame.height)
             popOver.sourceView = self.view
         }
         self.present(activityController, animated: true, completion: nil)
