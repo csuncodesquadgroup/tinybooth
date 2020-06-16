@@ -30,11 +30,6 @@ class PreviewViewController: UIViewController {
         print("image in PreviewViewController is ");
         print(image);
         
-        let modelName = UIDevice.modelName
-              if (modelName  ==  "iPad Air 2") {
-                  shareButton.isHidden = true
-              }
-        
     }
     
     
@@ -61,6 +56,9 @@ class PreviewViewController: UIViewController {
     // Linked to the "Share" button on Preview screen of Main.storyboard
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        if let popOver = activityController.popoverPresentationController {
+            popOver.sourceView = self.view
+        }
         self.present(activityController, animated: true, completion: nil)
         self.delegate?.previewDismissed()
     }
