@@ -21,6 +21,7 @@ class ViewController: UIViewController, PreviewDelegate {
 
 
     @IBOutlet weak var bottomBorder: UILabel!
+    @IBOutlet weak var topBorder: UIView!
     
     
     var image: UIImage?
@@ -148,17 +149,14 @@ class ViewController: UIViewController, PreviewDelegate {
         self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
         
         let aspectRatio = UIScreen.main.bounds.width/UIScreen.main.bounds.height
+        cameraPreviewLayer?.anchorPoint = CGPoint(x: 0, y:0)
+
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+
+        cameraPreviewLayer?.position = CGPoint(x: 0,
+                                               y: (topBorder.bounds.height/2))
         
-        if (aspectRatio >= 0.70) {
-            cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
-                                                   y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
-                                                    0.211*UIScreen.main.bounds.height))
-        } else {
-            cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
-                                                   y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
-                                                    0.403*UIScreen.main.bounds.height))
-            
-        }
+
 
         
     

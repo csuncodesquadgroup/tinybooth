@@ -96,6 +96,7 @@
                         <outlet property="displayMessage" destination="ceB-Rg-wRn" id="Gwn-X3-7a3"/>
                         <outlet property="flashButton" destination="5ub-9L-d2S" id="azg-bg-gXe"/>
                         <outlet property="startButton" destination="ImI-33-kwU" id="6rI-cY-A8H"/>
+                        <outlet property="topBorder" destination="aFj-l7-o9g" id="EYz-D9-Yh7"/>
                         <segue destination="RrH-3g-mvS" kind="presentation" identifier="showPhotoSegue" id="3N7-bz-Rkl"/>
                     </connections>
                 </viewController>
