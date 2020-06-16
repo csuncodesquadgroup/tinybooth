@@ -140,26 +140,24 @@
                                             <action selector="printButton_TouchUpInside:" destination="RrH-3g-mvS" eventType="touchUpInside" id="pGZ-Gf-Skb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVP-y7-RCJ">
-                                        <rect key="frame" x="178" y="28" width="18.666666666666657" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVP-y7-RCJ">
+                                        <rect key="frame" x="178" y="28" width="19" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="square.and.arrow.up" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="shareButton_TouchUpInside:" destination="RrH-3g-mvS" eventType="touchUpInside" id="B18-Mc-X9c"/>
+                                            <action selector="shareButton_TouchUpInside:" destination="RrH-3g-mvS" eventType="touchUpInside" id="8hz-AF-lic"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="iVP-y7-RCJ" firstAttribute="top" secondItem="vVo-of-wm8" secondAttribute="top" constant="28" id="AuO-fR-VOn"/>
                                     <constraint firstItem="n2p-3m-agV" firstAttribute="leading" secondItem="vVo-of-wm8" secondAttribute="leading" constant="41" id="Cni-HX-mYt"/>
                                     <constraint firstAttribute="height" constant="80" id="GI7-vR-gEp"/>
                                     <constraint firstAttribute="trailing" secondItem="To9-lq-kLb" secondAttribute="trailing" constant="41" id="JQz-Fl-65F"/>
                                     <constraint firstItem="n2p-3m-agV" firstAttribute="height" secondItem="vVo-of-wm8" secondAttribute="height" multiplier="0.34375" id="MnF-bz-TsF"/>
-                                    <constraint firstItem="To9-lq-kLb" firstAttribute="leading" secondItem="iVP-y7-RCJ" secondAttribute="trailing" constant="109.67" id="RCQ-Uq-ypU"/>
-                                    <constraint firstItem="iVP-y7-RCJ" firstAttribute="leading" secondItem="n2p-3m-agV" secondAttribute="trailing" constant="113.33" id="cuW-EH-kHH"/>
                                     <constraint firstItem="n2p-3m-agV" firstAttribute="centerY" secondItem="vVo-of-wm8" secondAttribute="centerY" id="pLm-3u-efd"/>
                                     <constraint firstItem="To9-lq-kLb" firstAttribute="centerY" secondItem="vVo-of-wm8" secondAttribute="centerY" id="ru1-PW-TVI"/>
                                     <constraint firstItem="To9-lq-kLb" firstAttribute="height" secondItem="vVo-of-wm8" secondAttribute="height" multiplier="0.34375" id="zrD-5M-ICd"/>
@@ -187,6 +185,7 @@
                     </view>
                     <connections>
                         <outlet property="photo" destination="vxV-oz-prr" id="I0J-6V-Vkf"/>
+                        <outlet property="shareButton" destination="iVP-y7-RCJ" id="Ju8-Ye-wrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfo-FE-iq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
