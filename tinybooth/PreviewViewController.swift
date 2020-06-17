@@ -59,6 +59,7 @@ class PreviewViewController: UIViewController {
         if let popOver = activityController.popoverPresentationController {
             popOver.sourceView = self.view
         }
+        activityController.excludedActivityTypes = [.print]
         self.present(activityController, animated: true, completion: nil)
         self.delegate?.previewDismissed()
     }
