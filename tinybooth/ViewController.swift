@@ -19,7 +19,8 @@ class ViewController: UIViewController, PreviewDelegate {
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
 
-
+    @IBOutlet weak var viewFinder: AVCaptureVideoPreviewLayer!
+    
     @IBOutlet weak var bottomBorder: UILabel!
     @IBOutlet weak var topBorder: UIView!
     
@@ -148,17 +149,8 @@ class ViewController: UIViewController, PreviewDelegate {
         cameraPreviewLayer?.frame = self.view.frame
         self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
         
-        let aspectRatio = UIScreen.main.bounds.width/UIScreen.main.bounds.height
-        cameraPreviewLayer?.anchorPoint = CGPoint(x: 0, y:0)
-
-        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-
-        cameraPreviewLayer?.position = CGPoint(x: 0,
-                                               y: (topBorder.bounds.height/2))
-        
-
-
-        
+        cameraPreviewLayer?.anchorPoint = CGPoint(x: 0, y: 0)
+        cameraPreviewLayer?.position = CGPoint(x: 0, y: topBorder.frame.height)
     
     }
     
