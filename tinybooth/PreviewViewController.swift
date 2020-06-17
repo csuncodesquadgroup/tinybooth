@@ -57,6 +57,8 @@ class PreviewViewController: UIViewController {
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
         let activityController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
         if let popOver = activityController.popoverPresentationController {
+            popOver.permittedArrowDirections = .up
+            popOver.sourceRect = CGRect(x: shareButton.frame.origin.x, y: shareButton.frame.origin.y, width: shareButton.frame.width, height: shareButton.frame.height)
             popOver.sourceView = self.view
         }
         activityController.excludedActivityTypes = [.print]

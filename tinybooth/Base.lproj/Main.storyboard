@@ -140,9 +140,8 @@
                                             <action selector="printButton_TouchUpInside:" destination="RrH-3g-mvS" eventType="touchUpInside" id="pGZ-Gf-Skb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVP-y7-RCJ">
-                                        <rect key="frame" x="178" y="28" width="19" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVP-y7-RCJ">
+                                        <rect key="frame" x="178" y="26.333333333333329" width="19" height="23"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="square.and.arrow.up" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,10 +153,12 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="iVP-y7-RCJ" firstAttribute="centerX" secondItem="vVo-of-wm8" secondAttribute="centerX" id="27r-zg-nDC"/>
                                     <constraint firstItem="n2p-3m-agV" firstAttribute="leading" secondItem="vVo-of-wm8" secondAttribute="leading" constant="41" id="Cni-HX-mYt"/>
                                     <constraint firstAttribute="height" constant="80" id="GI7-vR-gEp"/>
                                     <constraint firstAttribute="trailing" secondItem="To9-lq-kLb" secondAttribute="trailing" constant="41" id="JQz-Fl-65F"/>
                                     <constraint firstItem="n2p-3m-agV" firstAttribute="height" secondItem="vVo-of-wm8" secondAttribute="height" multiplier="0.34375" id="MnF-bz-TsF"/>
+                                    <constraint firstItem="iVP-y7-RCJ" firstAttribute="top" secondItem="vVo-of-wm8" secondAttribute="top" constant="26.329999999999998" id="cwo-7D-qFs"/>
                                     <constraint firstItem="n2p-3m-agV" firstAttribute="centerY" secondItem="vVo-of-wm8" secondAttribute="centerY" id="pLm-3u-efd"/>
                                     <constraint firstItem="To9-lq-kLb" firstAttribute="centerY" secondItem="vVo-of-wm8" secondAttribute="centerY" id="ru1-PW-TVI"/>
                                     <constraint firstItem="To9-lq-kLb" firstAttribute="height" secondItem="vVo-of-wm8" secondAttribute="height" multiplier="0.34375" id="zrD-5M-ICd"/>
