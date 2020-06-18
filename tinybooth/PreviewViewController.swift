@@ -28,7 +28,7 @@ class PreviewViewController: UIViewController {
         super.viewDidLoad()
         photo.image =  self.image;
         print("image in PreviewViewController is ");
-        print(image);
+        //print(image);
         
     }
     
