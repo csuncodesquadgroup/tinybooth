@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-d3-1xw">
-                                <rect key="frame" x="21" y="131" width="375" height="597"/>
+                                <rect key="frame" x="21" y="130.5" width="375" height="597"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1bJ-d3-1xw" secondAttribute="height" multiplier="375:541" id="ehw-kW-9cS"/>
@@ -42,6 +42,20 @@
                                     <constraint firstItem="kY0-OT-LEv" firstAttribute="top" secondItem="YPn-Fc-B6E" secondAttribute="top" constant="141" id="2vR-70-w7u"/>
                                     <constraint firstAttribute="bottom" secondItem="kY0-OT-LEv" secondAttribute="bottom" constant="-121" id="P0q-1o-MZ2"/>
                                 </constraints>
+                            </view>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0v-sZ-j5T">
+                                <rect key="frame" x="0.0" y="131" width="414" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijz-av-VS6">
+                                        <rect key="frame" x="77" y="61" width="261" height="244"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="134"/>
+                                        <color key="textColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImI-33-kwU">
                                 <rect key="frame" x="162" y="632" width="90" height="93"/>
@@ -104,6 +118,8 @@
                     <connections>
                         <outlet property="bottomBorder" destination="YPn-Fc-B6E" id="fd6-k2-3Mx"/>
                         <outlet property="bottomBorder_HeightConstraint" destination="Iat-py-m5G" id="6zE-ij-y2i"/>
+                        <outlet property="countDownBox" destination="M0v-sZ-j5T" id="APp-Pf-Z2S"/>
+                        <outlet property="countDownText" destination="Ijz-av-VS6" id="Wov-uv-Z2g"/>
                         <outlet property="displayMessage" destination="ceB-Rg-wRn" id="Gwn-X3-7a3"/>
                         <outlet property="flashButton" destination="5ub-9L-d2S" id="azg-bg-gXe"/>
                         <outlet property="startButton" destination="ImI-33-kwU" id="6rI-cY-A8H"/>
@@ -114,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="128.57142857142858"/>
+            <point key="canvasLocation" x="136.23188405797103" y="128.57142857142856"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="FYx-ea-nif">

@@ -25,6 +25,8 @@ class ViewController: UIViewController, PreviewDelegate {
     @IBOutlet weak var bottomBorder_HeightConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var countDownBox: UIView!
+    @IBOutlet weak var countDownText: UILabel!
     
     @IBOutlet weak var viewFinder: UIView!
     
@@ -89,6 +91,7 @@ class ViewController: UIViewController, PreviewDelegate {
             flashButton.isHidden = true;
         }
         
+        
         view.bringSubviewToFront(startButton)
         viewFinder.layer.zPosition = -100;
         
@@ -98,6 +101,16 @@ class ViewController: UIViewController, PreviewDelegate {
         }
 
         
+        if modelName.contains("8") {
+            countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height
+        } else if modelName.contains("iPad") {
+            countDownText.font = countDownText.font.withSize(200)
+            countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height
+        }  else {
+            countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height - topBorder.frame.size.height
+        }
+
+        countDownBox.isHidden = true
         
         
     }
@@ -185,7 +198,7 @@ class ViewController: UIViewController, PreviewDelegate {
             return;
         }
         
-        startButton.backgroundColor = UIColor.red
+        
         
         takingPhotos = true;
         var count = 4;
@@ -194,8 +207,9 @@ class ViewController: UIViewController, PreviewDelegate {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (t) in
         
             if let s = self {
-                s.startButton.isHidden = false;
+                s.startButton.isHidden = true;
                 s.displayMessage.isHidden = true;
+                s.countDownBox.isHidden = false
                 count = count - 1;
                 if (count < 1) {
                     s.takePhoto();
@@ -203,7 +217,7 @@ class ViewController: UIViewController, PreviewDelegate {
                     photosTaken = photosTaken + 1;
                     if (photosTaken == 4) {
                         t.invalidate();
-                        s.startButton.isHidden = true;
+                        s.countDownBox.isHidden = true;
                         s.displayMessage.text = "All done!"
                         self?.takingPhotos = false;
                         self?.startButton.backgroundColor = UIColor.green
@@ -211,8 +225,8 @@ class ViewController: UIViewController, PreviewDelegate {
                     
                 } else {
                     self?.sound?.play();
-                    s.startButton.backgroundColor = UIColor.red
-                    s.startButton.setTitle(String(count), for:UIControl.State.normal);
+                   
+                    s.countDownText.text = String(count);
                 }
             }
         });
@@ -236,6 +250,7 @@ class ViewController: UIViewController, PreviewDelegate {
     func takePhoto() {
         
         //performSegue(withIdentifier: "showTimer_Segue", sender: nil)
+        countDownBox.isHidden = true
         let settings = AVCapturePhotoSettings();
         
             if (flashToggleOn) {
@@ -268,6 +283,7 @@ class ViewController: UIViewController, PreviewDelegate {
     
     public func previewDismissed() {
         startButton.setTitle("Start", for:UIControl.State.normal);
+        countDownBox.isHidden = true
         startButton.isHidden = false;
         print("showing button again")
         print(startButton.isHidden)
