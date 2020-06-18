@@ -21,7 +21,11 @@ class ViewController: UIViewController, PreviewDelegate {
 
 
 
-
+    
+    @IBOutlet weak var bottomBorder_HeightConstraint: NSLayoutConstraint!
+    
+    
+    
     @IBOutlet weak var viewFinder: UIView!
     
     
@@ -87,6 +91,12 @@ class ViewController: UIViewController, PreviewDelegate {
         
         view.bringSubviewToFront(startButton)
         viewFinder.layer.zPosition = -100;
+        
+        if (modelName == "iPhone 8") {
+            bottomBorder_HeightConstraint.constant = 100
+        }
+
+        
         
         
     }
