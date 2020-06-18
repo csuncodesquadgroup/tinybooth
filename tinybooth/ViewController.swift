@@ -20,7 +20,17 @@ class ViewController: UIViewController, PreviewDelegate {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
 
 
+
+    
+    @IBOutlet weak var bottomBorder_HeightConstraint: NSLayoutConstraint!
+    
+    
+    
+    @IBOutlet weak var viewFinder: UIView!
+    
+    
     @IBOutlet weak var bottomBorder: UILabel!
+    @IBOutlet weak var topBorder: UIView!
     
     
     var image: UIImage?
@@ -50,7 +60,7 @@ class ViewController: UIViewController, PreviewDelegate {
         setupDevice()
         setupInputOutput()
         setupPreviewLayer()
-        startRunningCaptureSession()
+  
 
         super.viewDidLoad();
         
@@ -76,10 +86,19 @@ class ViewController: UIViewController, PreviewDelegate {
         
         let modelName = UIDevice.modelName
         if (modelName  ==  "iPad Air 2") {
-            flashButton.isHidden = true
+            flashButton.isHidden = true;
         }
         
-        self.bottomBorder.frame.size.height += UIScreen.main.bounds.height*5
+        view.bringSubviewToFront(startButton)
+        viewFinder.layer.zPosition = -100;
+        
+        if (modelName == "iPhone 8") {
+            bottomBorder_HeightConstraint.constant = 100
+            startButton.layer.cornerRadius = self.view.frame.height * 0.065 ;
+        }
+
+        
+        
         
     }
     
@@ -142,32 +161,22 @@ class ViewController: UIViewController, PreviewDelegate {
     // this is the camera  preview that shows on the screen
     func setupPreviewLayer() {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        cameraPreviewLayer?.frame = self.view.frame
-        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
-        
-        let aspectRatio = UIScreen.main.bounds.width/UIScreen.main.bounds.height
-        
-        if (aspectRatio >= 0.70) {
-            cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
-                                                   y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
-                                                    0.211*UIScreen.main.bounds.height))
-        } else {
-            cameraPreviewLayer?.position = CGPoint(x: 0.50*UIScreen.main.bounds.width,
-                                                   y: (UIScreen.main.bounds.height -  0.14538*UIScreen.main.bounds.height -
-                                                    0.403*UIScreen.main.bounds.height))
-            
-        }
+        viewFinder.layer.addSublayer(cameraPreviewLayer!)
+
+       
 
         
-    
-    }
-    
-    // start running when we have finished configuration
-    func startRunningCaptureSession() {
         captureSession.startRunning()
+        DispatchQueue.main.async {
+            self.cameraPreviewLayer.frame = self.viewFinder.bounds
+
+
+        }
     }
+    
+
     
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
