@@ -85,7 +85,9 @@ class ViewController: UIViewController, PreviewDelegate {
             flashButton.isHidden = true
         }
         
-        self.bottomBorder.frame.size.height += UIScreen.main.bounds.height*5
+        
+        viewFinder.layer.zPosition = -1
+
         
     }
     
@@ -148,13 +150,18 @@ class ViewController: UIViewController, PreviewDelegate {
     // this is the camera  preview that shows on the screen
     func setupPreviewLayer() {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         viewFinder.layer.addSublayer(cameraPreviewLayer!)
+
+       
+
         
         captureSession.startRunning()
         DispatchQueue.main.async {
             self.cameraPreviewLayer.frame = self.viewFinder.bounds
+
+
         }
     }
     

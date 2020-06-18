@@ -15,11 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-d3-1xw">
-                                <rect key="frame" x="0.0" y="105" width="375" height="564"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPn-Fc-B6E">
                                 <rect key="frame" x="0.0" y="389" width="414" height="389"/>
                                 <subviews>
@@ -77,6 +72,13 @@
                                     <constraint firstItem="5ub-9L-d2S" firstAttribute="centerY" secondItem="aFj-l7-o9g" secondAttribute="centerY" id="tYE-KN-smr"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-d3-1xw">
+                                <rect key="frame" x="0.0" y="108" width="375" height="541"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1bJ-d3-1xw" secondAttribute="height" multiplier="375:541" id="ehw-kW-9cS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -88,7 +90,9 @@
                             <constraint firstItem="YPn-Fc-B6E" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.288043" id="Iat-py-m5G">
                                 <variation key="heightClass=regular-widthClass=compact" constant="155"/>
                             </constraint>
+                            <constraint firstItem="1bJ-d3-1xw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Kex-vi-WH1"/>
                             <constraint firstItem="ImI-33-kwU" firstAttribute="centerX" secondItem="YPn-Fc-B6E" secondAttribute="centerX" id="MWV-kb-pW8"/>
+                            <constraint firstItem="1bJ-d3-1xw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aFj-l7-o9g" secondAttribute="top" constant="130" id="QFZ-yr-53B"/>
                             <constraint firstItem="kY0-OT-LEv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="R3e-5w-elb"/>
                             <constraint firstItem="aFj-l7-o9g" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WKW-UZ-pk9"/>
                             <constraint firstItem="YPn-Fc-B6E" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hyl-b0-KbF"/>
