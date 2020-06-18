@@ -15,6 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-d3-1xw">
+                                <rect key="frame" x="0.0" y="105" width="375" height="564"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPn-Fc-B6E">
                                 <rect key="frame" x="0.0" y="389" width="414" height="389"/>
                                 <subviews>
@@ -97,6 +102,7 @@
                         <outlet property="flashButton" destination="5ub-9L-d2S" id="azg-bg-gXe"/>
                         <outlet property="startButton" destination="ImI-33-kwU" id="6rI-cY-A8H"/>
                         <outlet property="topBorder" destination="aFj-l7-o9g" id="EYz-D9-Yh7"/>
+                        <outlet property="viewFinder" destination="1bJ-d3-1xw" id="3GC-RZ-t6U"/>
                         <segue destination="RrH-3g-mvS" kind="presentation" identifier="showPhotoSegue" id="3N7-bz-Rkl"/>
                     </connections>
                 </viewController>

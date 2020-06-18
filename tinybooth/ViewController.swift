@@ -19,7 +19,11 @@ class ViewController: UIViewController, PreviewDelegate {
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
 
-    @IBOutlet weak var viewFinder: AVCaptureVideoPreviewLayer!
+
+
+
+    @IBOutlet weak var viewFinder: UIView!
+    
     
     @IBOutlet weak var bottomBorder: UILabel!
     @IBOutlet weak var topBorder: UIView!
@@ -52,7 +56,7 @@ class ViewController: UIViewController, PreviewDelegate {
         setupDevice()
         setupInputOutput()
         setupPreviewLayer()
-        startRunningCaptureSession()
+  
 
         super.viewDidLoad();
         
@@ -146,18 +150,15 @@ class ViewController: UIViewController, PreviewDelegate {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        cameraPreviewLayer?.frame = self.view.frame
-        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+        viewFinder.layer.addSublayer(cameraPreviewLayer!)
         
-        cameraPreviewLayer?.anchorPoint = CGPoint(x: 0, y: 0)
-        cameraPreviewLayer?.position = CGPoint(x: 0, y: topBorder.frame.height)
-    
-    }
-    
-    // start running when we have finished configuration
-    func startRunningCaptureSession() {
         captureSession.startRunning()
+        DispatchQueue.main.async {
+            self.cameraPreviewLayer.frame = self.viewFinder.bounds
+        }
     }
+    
+
     
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
