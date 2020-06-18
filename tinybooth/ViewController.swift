@@ -20,7 +20,8 @@ class ViewController: UIViewController, PreviewDelegate {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
 
 
-
+ 
+    
     
     @IBOutlet weak var bottomBorder_HeightConstraint: NSLayoutConstraint!
     
@@ -43,7 +44,7 @@ class ViewController: UIViewController, PreviewDelegate {
     var photoStripImage:  UIImage?
     let sillyMessages =  ["Smile!", "Cheese!", "Work it!", "Cute!", "Perfect!", "Pose!", "Adorable!", "That's  Great!", "\u{1F60E}"];
     
-    
+
 
     @IBOutlet weak var startButton: UIButton!;  // part of camera button, going to be used to turn button into timer
     var timer = Timer()                         // timer variable for timer
@@ -53,6 +54,7 @@ class ViewController: UIViewController, PreviewDelegate {
     @IBOutlet weak var flashButton: UIButton!   //connects flash button
     var flashToggleOn: Bool = false;            //sets flash default to off
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -77,7 +79,7 @@ class ViewController: UIViewController, PreviewDelegate {
             // couldn't load file :(
         }
         
-        
+
         startButton.layer.zPosition = 100;
         startButton.layer.cornerRadius = self.view.frame.height * 0.055 ;
         let fontSize = self.view.frame.width * 0.05 ;
@@ -100,7 +102,7 @@ class ViewController: UIViewController, PreviewDelegate {
             startButton.layer.cornerRadius = self.view.frame.height * 0.065 ;
         }
 
-        
+
         if modelName.contains("8") {
             countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height
         } else if modelName.contains("iPad") {
@@ -114,7 +116,7 @@ class ViewController: UIViewController, PreviewDelegate {
         
         
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         startButton.setTitle("Start", for:UIControl.State.normal);
@@ -146,7 +148,7 @@ class ViewController: UIViewController, PreviewDelegate {
         
 
 
-        
+
         // setting the camera view to the front facing camera
         currentCamera = frontCamera;
         
@@ -169,7 +171,7 @@ class ViewController: UIViewController, PreviewDelegate {
         }
         
     }
-    
+
     // configuring photo output object to process captured images
     // this is the camera  preview that shows on the screen
     func setupPreviewLayer() {
@@ -190,7 +192,13 @@ class ViewController: UIViewController, PreviewDelegate {
     }
     
 
+    @IBAction func helpButton_TouchUpInside(_ sender: Any) {
+        
+        performSegue(withIdentifier: "showHelpSegue", sender: nil);
+        
+    }
     
+
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
@@ -312,7 +320,6 @@ class ViewController: UIViewController, PreviewDelegate {
         startButton.setTitle("Start", for:UIControl.State.normal);
         startButton.isHidden = false;
     }
-        
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
