@@ -47,10 +47,10 @@ class PreviewViewController: UIViewController {
     @IBAction func printButton_TouchUpInside(_ sender: Any) {
         delegate?.previewPrinted()
         
-        // dismisses preview modal
-        dismiss(animated: true, completion: {
-            self.delegate?.previewDismissed()
-        })
+        // dismisses preview modal - un comment to do it
+//        dismiss(animated: true, completion: {
+//            self.delegate?.previewDismissed()
+//        })
     }
 
     // Linked to the "Share" button on Preview screen of Main.storyboard
