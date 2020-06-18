@@ -82,12 +82,12 @@ class ViewController: UIViewController, PreviewDelegate {
         
         let modelName = UIDevice.modelName
         if (modelName  ==  "iPad Air 2") {
-            flashButton.isHidden = true
+            flashButton.isHidden = true;
         }
         
+        view.bringSubviewToFront(startButton)
+        viewFinder.layer.zPosition = -100;
         
-        viewFinder.layer.zPosition = -1
-
         
     }
     
