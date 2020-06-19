@@ -9,28 +9,25 @@
 import UIKit
 
 class HelpViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var contactTextLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   
         // Do any additional setup after loading the view.
     }
 
     @IBAction func exitButton_TouchUpInside(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
+    }    
     
-    
-    
+    func contactTextLink() {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
+
+
+
