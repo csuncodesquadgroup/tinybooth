@@ -27,7 +27,7 @@ class PreviewViewController: UIViewController {
         super.viewDidLoad()
         photo.image =  self.image;
         print("image in PreviewViewController is ");
-        print(image);
+        //print(image);
         
     }
     
@@ -46,10 +46,10 @@ class PreviewViewController: UIViewController {
     @IBAction func printButton_TouchUpInside(_ sender: Any) {
         delegate?.previewPrinted()
         
-        // dismisses preview modal
-        dismiss(animated: true, completion: {
-            self.delegate?.previewDismissed()
-        })
+        // dismisses preview modal - un comment to do it
+//        dismiss(animated: true, completion: {
+//            self.delegate?.previewDismissed()
+//        })
     }
 
     // Linked to the "Share" button on Preview screen of Main.storyboard
@@ -70,7 +70,7 @@ class PreviewViewController: UIViewController {
         }
 
         let activityController = UIActivityViewController(activityItems: [urlOfImageToShare], applicationActivities: nil)
-       
+
         if let popOver = activityController.popoverPresentationController {
             popOver.permittedArrowDirections = .up
             popOver.sourceRect = CGRect(x: shareButton.frame.origin.x, y: shareButton.frame.origin.y, width: shareButton.frame.width, height: shareButton.frame.height)
@@ -84,5 +84,6 @@ class PreviewViewController: UIViewController {
     
 }
     
+
   
 
