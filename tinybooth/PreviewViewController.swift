@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 protocol PreviewDelegate {
     func previewDismissed()
     func previewPrinted()
@@ -18,6 +16,7 @@ protocol PreviewDelegate {
 class PreviewViewController: UIViewController {
 
     var delegate: PreviewDelegate?
+    var urlOfImageToShare: URL?
     
     @IBOutlet weak var photo: UIImageView!  // linked to the UIImageView on previeew screen
     var image: UIImage!                     //  is the image variable for what goes inside the UIImageView
@@ -55,17 +54,34 @@ class PreviewViewController: UIViewController {
 
     // Linked to the "Share" button on Preview screen of Main.storyboard
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        
+        // saves captured image to app's temp directory
+        let urlOfImageToShare = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+            .appendingPathComponent("Your Photo! -tinybooth", isDirectory: false)
+            .appendingPathExtension("jpg")
+
+        // Then write to disk
+        if let data = image.jpegData(compressionQuality: 0.8) {
+            do {
+                try data.write(to: urlOfImageToShare)
+            } catch {
+                print("Handle the error, i.e. disk can be full")
+            }
+        }
+
+        let activityController = UIActivityViewController(activityItems: [urlOfImageToShare], applicationActivities: nil)
+       
         if let popOver = activityController.popoverPresentationController {
             popOver.permittedArrowDirections = .up
             popOver.sourceRect = CGRect(x: shareButton.frame.origin.x, y: shareButton.frame.origin.y, width: shareButton.frame.width, height: shareButton.frame.height)
             popOver.sourceView = self.view
         }
         activityController.excludedActivityTypes = [.print]
+       
         self.present(activityController, animated: true, completion: nil)
         self.delegate?.previewDismissed()
     }
-   
+    
 }
     
   
