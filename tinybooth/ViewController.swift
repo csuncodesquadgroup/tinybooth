@@ -328,7 +328,7 @@ class ViewController: UIViewController, PreviewDelegate {
             if UIDevice.modelName.contains("Air") {
                 photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
-                photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 1000))
+                photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 700))
                 
             } else {
                 photoStripImage = PhotoUtil.renderPhotostrip(
