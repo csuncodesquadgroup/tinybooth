@@ -76,6 +76,7 @@ class PreviewViewController: UIViewController {
             popOver.sourceRect = CGRect(x: shareButton.frame.origin.x, y: shareButton.frame.origin.y, width: shareButton.frame.width, height: shareButton.frame.height)
             popOver.sourceView = self.view
         }
+        activityController.isModalInPresentation = true
         activityController.excludedActivityTypes = [.print]
        
         self.present(activityController, animated: true, completion: nil)
