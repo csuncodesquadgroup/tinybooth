@@ -27,7 +27,23 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-OT-LEv">
                                         <rect key="frame" x="0.0" y="141" width="414" height="347"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-p3-OEr">
+                                                <rect key="frame" x="345" y="162" width="20" height="22"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="info.circle" catalog="system">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="helpButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSF-S2-Mrx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cIH-p3-OEr" secondAttribute="bottom" constant="163" id="fht-il-Fyx"/>
+                                            <constraint firstAttribute="trailing" secondItem="cIH-p3-OEr" secondAttribute="trailing" constant="49" id="vm1-lb-Fck"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Awesome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceB-Rg-wRn">
                                         <rect key="frame" x="59" y="132" width="297" height="104"/>
@@ -126,11 +142,79 @@
                         <outlet property="topBorder" destination="aFj-l7-o9g" id="EYz-D9-Yh7"/>
                         <outlet property="viewFinder" destination="1bJ-d3-1xw" id="3GC-RZ-t6U"/>
                         <segue destination="RrH-3g-mvS" kind="presentation" identifier="showPhotoSegue" id="3N7-bz-Rkl"/>
+                        <segue destination="91M-Gf-w3n" kind="presentation" identifier="showHelpSegue" id="EpC-BU-JdU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="128.57142857142856"/>
+            <point key="canvasLocation" x="39" y="120"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="xR6-3Z-dah">
+            <objects>
+                <viewController id="91M-Gf-w3n" customClass="HelpViewController" customModule="tinybooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qrA-Bd-owK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4q-Qp-W1I">
+                                <rect key="frame" x="355" y="26.5" width="18" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="exitButton_TouchUpInside:" destination="91M-Gf-w3n" eventType="touchUpInside" id="Odd-3t-ZvS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-Th-Umo">
+                                <rect key="frame" x="41" y="67" width="111" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOR-9w-dzV">
+                                <rect key="frame" x="41" y="174" width="83" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 Build 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqs-86-R02">
+                                <rect key="frame" x="41" y="113" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Visit our github to submit new feature requests and bug reports." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBN-br-0Kb">
+                                <rect key="frame" x="41" y="220" width="332" height="57"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i4q-Qp-W1I" firstAttribute="top" secondItem="3dC-zx-jNe" secondAttribute="top" constant="26.5" id="CcX-9S-uuf"/>
+                            <constraint firstItem="fBN-br-0Kb" firstAttribute="top" secondItem="VOR-9w-dzV" secondAttribute="bottom" constant="17" id="I1S-K4-fIk"/>
+                            <constraint firstItem="3dC-zx-jNe" firstAttribute="trailing" secondItem="fBN-br-0Kb" secondAttribute="trailing" constant="41" id="MFL-jQ-0jf"/>
+                            <constraint firstItem="fBN-br-0Kb" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="Rhh-Sz-g2E"/>
+                            <constraint firstItem="VOR-9w-dzV" firstAttribute="top" secondItem="Uqs-86-R02" secondAttribute="bottom" constant="40" id="TUt-7f-5Af"/>
+                            <constraint firstItem="DXB-Th-Umo" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="YYT-0E-Wdh"/>
+                            <constraint firstItem="3dC-zx-jNe" firstAttribute="trailing" secondItem="i4q-Qp-W1I" secondAttribute="trailing" constant="41" id="atb-KB-Ys3"/>
+                            <constraint firstItem="Uqs-86-R02" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="kop-B7-Kdl"/>
+                            <constraint firstItem="VOR-9w-dzV" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="vqZ-4K-rkL"/>
+                            <constraint firstItem="Uqs-86-R02" firstAttribute="top" secondItem="DXB-Th-Umo" secondAttribute="bottom" constant="17" id="x4U-NS-0VG"/>
+                            <constraint firstItem="DXB-Th-Umo" firstAttribute="top" secondItem="3dC-zx-jNe" secondAttribute="top" constant="67" id="xtd-Q1-ru6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3dC-zx-jNe"/>
+                    </view>
+                    <connections>
+                        <outlet property="contactTextView" destination="fBN-br-0Kb" id="yjb-hs-213"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xM-lZ-q07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966.66666666666674" y="493.52678571428567"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="FYx-ea-nif">
@@ -220,14 +304,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfo-FE-iq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071.0144927536232" y="127.98913043478262"/>
+            <point key="canvasLocation" x="1016" y="-210"/>
         </scene>
     </scenes>
     <resources>
         <image name="bolt.fill" catalog="system" width="101" height="128"/>
         <image name="bolt.slash.fill" catalog="system" width="101" height="128"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="printer.fill" catalog="system" width="128" height="111"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

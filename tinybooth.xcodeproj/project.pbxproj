@@ -13,6 +13,7 @@
 		663BD00B248ADFF70090A64E /* countdownSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 663BD009248ADFF70090A64E /* countdownSound.mp3 */; };
 		663BD00C248ADFF70090A64E /* countdownSound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 663BD00A248ADFF70090A64E /* countdownSound_1.mp3 */; };
 		6655F66F2495854A000D6C76 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655F66E2495854A000D6C76 /* UIDevice.swift */; };
+		6679633E249C24A7009F625F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679633D249C24A7009F625F /* HelpViewController.swift */; };
 		66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3C2487430B00D55C70 /* AppDelegate.swift */; };
 		66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E72E3E2487430B00D55C70 /* SceneDelegate.swift */; };
 		66E72E442487430B00D55C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E72E422487430B00D55C70 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		663BD009248ADFF70090A64E /* countdownSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdownSound.mp3; sourceTree = "<group>"; };
 		663BD00A248ADFF70090A64E /* countdownSound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdownSound_1.mp3; sourceTree = "<group>"; };
 		6655F66E2495854A000D6C76 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		6679633D249C24A7009F625F /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = SOURCE_ROOT; };
 		66E72E392487430B00D55C70 /* tinybooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinybooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E72E3C2487430B00D55C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E72E3E2487430B00D55C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		66E72E3B2487430B00D55C70 /* tinybooth */ = {
 			isa = PBXGroup;
 			children = (
+				6679633D249C24A7009F625F /* HelpViewController.swift */,
 				66E72E3C2487430B00D55C70 /* AppDelegate.swift */,
 				663BD00A248ADFF70090A64E /* countdownSound_1.mp3 */,
 				663BD009248ADFF70090A64E /* countdownSound.mp3 */,
@@ -161,6 +164,7 @@
 				663BD002248AC1A00090A64E /* ViewController.swift in Sources */,
 				66E72E3D2487430B00D55C70 /* AppDelegate.swift in Sources */,
 				663BD008248AD9050090A64E /* PhotoUtil.swift in Sources */,
+				6679633E249C24A7009F625F /* HelpViewController.swift in Sources */,
 				66E72E472487430B00D55C70 /* tinybooth.xcdatamodeld in Sources */,
 				663BCFFF2489A5850090A64E /* PreviewViewController.swift in Sources */,
 				66E72E3F2487430B00D55C70 /* SceneDelegate.swift in Sources */,
