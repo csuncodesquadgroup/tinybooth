@@ -325,10 +325,17 @@ class ViewController: UIViewController, PreviewDelegate {
         if segue.identifier == "showPhotoSegue" {
             let previewVC = segue.destination as! PreviewViewController;
             
+            if UIDevice.modelName.contains("Air") {
+                photoStripImage = PhotoUtil.renderPhotostrip(
+                photoFiles: fileNames.reversed(),
+                photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 1000))
+                
+            } else {
                 photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
                 photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 1700))
-            
+            }
+
 
             
             previewVC.image = photoStripImage;
