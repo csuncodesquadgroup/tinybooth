@@ -16,7 +16,6 @@ protocol PreviewDelegate {
 class PreviewViewController: UIViewController {
 
     var delegate: PreviewDelegate?
-    var urlOfImageToShare: URL?
     
     @IBOutlet weak var photo: UIImageView!  // linked to the UIImageView on previeew screen
     var image: UIImage!                     //  is the image variable for what goes inside the UIImageView
@@ -65,7 +64,7 @@ class PreviewViewController: UIViewController {
             do {
                 try data.write(to: urlOfImageToShare)
             } catch {
-                print("Handle the error, i.e. disk can be full")
+                print("Error - cannot write to disk")
             }
         }
 
@@ -76,6 +75,7 @@ class PreviewViewController: UIViewController {
             popOver.sourceRect = CGRect(x: shareButton.frame.origin.x, y: shareButton.frame.origin.y, width: shareButton.frame.width, height: shareButton.frame.height)
             popOver.sourceView = self.view
         }
+        //activityController.isModalInPresentation = true
         activityController.excludedActivityTypes = [.print]
        
         self.present(activityController, animated: true, completion: nil)
