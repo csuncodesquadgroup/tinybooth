@@ -183,27 +183,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86Z-DT-JH8">
-                                <rect key="frame" x="41" y="220" width="332" height="41"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Visit our github to submit new feature requests and bug reports.">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Visit our github to submit new feature requests and bug reports." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBN-br-0Kb">
+                                <rect key="frame" x="41" y="220" width="332" height="57"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3dC-zx-jNe" firstAttribute="trailing" secondItem="86Z-DT-JH8" secondAttribute="trailing" constant="41" id="20e-PH-AFo"/>
-                            <constraint firstItem="86Z-DT-JH8" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="394-E5-c1o"/>
                             <constraint firstItem="i4q-Qp-W1I" firstAttribute="top" secondItem="3dC-zx-jNe" secondAttribute="top" constant="26.5" id="CcX-9S-uuf"/>
+                            <constraint firstItem="fBN-br-0Kb" firstAttribute="top" secondItem="VOR-9w-dzV" secondAttribute="bottom" constant="17" id="I1S-K4-fIk"/>
+                            <constraint firstItem="3dC-zx-jNe" firstAttribute="trailing" secondItem="fBN-br-0Kb" secondAttribute="trailing" constant="41" id="MFL-jQ-0jf"/>
+                            <constraint firstItem="fBN-br-0Kb" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="Rhh-Sz-g2E"/>
                             <constraint firstItem="VOR-9w-dzV" firstAttribute="top" secondItem="Uqs-86-R02" secondAttribute="bottom" constant="40" id="TUt-7f-5Af"/>
-                            <constraint firstItem="86Z-DT-JH8" firstAttribute="top" secondItem="VOR-9w-dzV" secondAttribute="bottom" constant="17" id="WiC-pC-WYx"/>
                             <constraint firstItem="DXB-Th-Umo" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="YYT-0E-Wdh"/>
                             <constraint firstItem="3dC-zx-jNe" firstAttribute="trailing" secondItem="i4q-Qp-W1I" secondAttribute="trailing" constant="41" id="atb-KB-Ys3"/>
                             <constraint firstItem="Uqs-86-R02" firstAttribute="leading" secondItem="3dC-zx-jNe" secondAttribute="leading" constant="41" id="kop-B7-Kdl"/>
@@ -214,7 +209,7 @@
                         <viewLayoutGuide key="safeArea" id="3dC-zx-jNe"/>
                     </view>
                     <connections>
-                        <outlet property="contactTextLabel" destination="86Z-DT-JH8" id="Bwa-CL-AUC"/>
+                        <outlet property="contactTextView" destination="fBN-br-0Kb" id="yjb-hs-213"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xM-lZ-q07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
