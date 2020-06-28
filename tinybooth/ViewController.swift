@@ -101,7 +101,7 @@ class ViewController: UIViewController, PreviewDelegate {
             bottomBorder_HeightConstraint.constant = 100
             startButton.layer.cornerRadius = self.view.frame.height * 0.065
         } else if (modelName == "iPhone 11") {
-            bottomBorder_HeightConstraint.constant = 250
+            bottomBorder_HeightConstraint.constant = 260
         } else if modelName.contains("7") {
             bottomBorder_HeightConstraint.constant = 100
             startButton.layer.cornerRadius = self.view.frame.height * 0.065
