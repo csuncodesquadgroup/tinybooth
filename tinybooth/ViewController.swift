@@ -103,6 +103,10 @@ class ViewController: UIViewController, PreviewDelegate {
         } else if modelName.contains("11") {
             bottomBorder_HeightConstraint.constant = 150
         } else if modelName.contains("7") {
+            bottomBorder_HeightConstraint.constant = 100
+            startButton.layer.cornerRadius = self.view.frame.height * 0.065
+        } else if modelName.contains("6") {
+            bottomBorder_HeightConstraint.constant = 100
             startButton.layer.cornerRadius = self.view.frame.height * 0.065
         }
 
@@ -111,7 +115,9 @@ class ViewController: UIViewController, PreviewDelegate {
         if modelName.contains("8") {
             countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height
         } else if modelName.contains("7") {
-            countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height*1.2
+            countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height
+        } else if modelName.contains("6") {
+            countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height
         } else if modelName.contains("iPad Pro (12") {
             countDownText.font = countDownText.font.withSize(200)
             countDownBox.frame.size.height = UIScreen.main.bounds.height - bottomBorder.frame.size.height*1.5
