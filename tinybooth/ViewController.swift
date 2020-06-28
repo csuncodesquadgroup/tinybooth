@@ -130,6 +130,9 @@ class ViewController: UIViewController, PreviewDelegate {
 
         countDownBox.isHidden = true
         
+          // when app enters background event, trigger notification and exit app
+             let notificationCenter = NotificationCenter.default
+             notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         
     }
 
@@ -368,6 +371,11 @@ class ViewController: UIViewController, PreviewDelegate {
 
     override var prefersStatusBarHidden: Bool {
         return true;
+    }
+    
+    @objc func appMovedToBackground() {
+        print("App moved to background")
+        exit(0)
     }
     
 }
