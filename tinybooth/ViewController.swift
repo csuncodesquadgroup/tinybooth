@@ -197,6 +197,9 @@ class ViewController: UIViewController, PreviewDelegate {
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         viewFinder.layer.addSublayer(cameraPreviewLayer!)
+
+       
+
         
         captureSession.startRunning()
         DispatchQueue.main.async {
@@ -349,10 +352,6 @@ class ViewController: UIViewController, PreviewDelegate {
                 photoFiles: fileNames.reversed(),
                 photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 700))
                 
-            } else if (UIDevice.modelName == "iPhone 11") {
-                photoStripImage = PhotoUtil.renderPhotostrip(
-                photoFiles: fileNames.reversed(),
-                photosCropRect: CGRect(x: 0, y: 0, width: 2800, height: 2070))
             } else {
                 photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
