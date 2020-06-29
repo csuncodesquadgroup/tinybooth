@@ -156,12 +156,7 @@ We may update this privacy notice from time to time. The updated version will be
 
 11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
 
-If you have questions or comments about this notice, you may email us at __________ or by post to:
-
-codesquad 
-__________
-__________
-United States
+If you have questions or comments about this notice, you may create an issue here on github.
 
 
 HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
