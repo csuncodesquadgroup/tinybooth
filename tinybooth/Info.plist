@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>App requires camera usage so that it can take photos of the user(s) to create a photostrip.</string>
 	<key>NSFileProviderDomainUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
