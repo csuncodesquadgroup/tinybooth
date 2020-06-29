@@ -98,8 +98,6 @@ class ViewController: UIViewController, PreviewDelegate {
         if (modelName == "iPhone 8") {
             bottomBorder_HeightConstraint.constant = 100
             startButton.layer.cornerRadius = self.view.frame.height * 0.065
-        } else if (modelName == "iPhone 11") {
-            bottomBorder_HeightConstraint.constant = 260
         } else if modelName.contains("7") {
             bottomBorder_HeightConstraint.constant = 100
             startButton.layer.cornerRadius = self.view.frame.height * 0.065
@@ -352,6 +350,10 @@ class ViewController: UIViewController, PreviewDelegate {
                 photoFiles: fileNames.reversed(),
                 photosCropRect: CGRect(x: 0, y: 0, width: 2300, height: 700))
                 
+            } else if (UIDevice.modelName == "iPhone 11") {
+                photoStripImage = PhotoUtil.renderPhotostrip(
+                photoFiles: fileNames.reversed(),
+                photosCropRect: CGRect(x: 0, y: 0, width: 3000, height: 2217))
             } else {
                 photoStripImage = PhotoUtil.renderPhotostrip(
                 photoFiles: fileNames.reversed(),
