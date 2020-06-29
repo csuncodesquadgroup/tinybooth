@@ -18,9 +18,7 @@ class ViewController: UIViewController, PreviewDelegate {
     var currentCamera: AVCaptureDevice?         // represents current camera - should be set to front camera for photobooth
     var photoOutput: AVCapturePhotoOutput?      // the output/photo
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
-
-
- 
+    public var sessionInProgress = false;
     
     
     @IBOutlet weak var bottomBorder_HeightConstraint: NSLayoutConstraint!
@@ -132,7 +130,8 @@ class ViewController: UIViewController, PreviewDelegate {
         
           // when app enters background event, trigger notification and exit app
              let notificationCenter = NotificationCenter.default
-             notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+            notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+    
         
     }
 
@@ -221,6 +220,9 @@ class ViewController: UIViewController, PreviewDelegate {
     
     // Linked to the camera/shutter button on maine view controller of Main.storyboard (like the initial screen you see when you open up the app
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
+        
+        sessionInProgress = true;
+        
         if (takingPhotos) {
             return;
         }
@@ -246,6 +248,7 @@ class ViewController: UIViewController, PreviewDelegate {
                         t.invalidate();
                         s.countDownBox.isHidden = true;
                         s.displayMessage.text = "All done!"
+                        s.sessionInProgress = false
                         self?.takingPhotos = false;
                         self?.startButton.backgroundColor = UIColor.green
                     }
@@ -374,8 +377,10 @@ class ViewController: UIViewController, PreviewDelegate {
     }
     
     @objc func appMovedToBackground() {
-        print("App moved to background")
-        exit(0)
+        if (sessionInProgress) {
+            print("App moved to background")
+            exit(0)
+        }
     }
     
 }
