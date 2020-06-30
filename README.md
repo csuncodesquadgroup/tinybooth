@@ -1,6 +1,10 @@
 # Get the app
 
+Download Apple App Store Verion
 https://apps.apple.com/us/app/tinybooth/id1519858905
+
+Get the Public Beta
+https://testflight.apple.com/join/PLKhrEM2
 
 # tinybooth
 
