@@ -1,3 +1,7 @@
+# Get the app
+
+https://apps.apple.com/us/app/tinybooth/id1519858905
+
 # tinybooth
 
 Getting started
